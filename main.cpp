@@ -10,37 +10,39 @@ struct Car
 	double Price;
 };
 
-const int LotSpase = 10;
-Car Lot[LotSpase];
+//Array to store 10 cars.
+const int LotSpace = 10;
+Car Lot[LotSpace];
 
+//FUNCTIONS
 void setcarData(Car &theCar);
 void displaycarData(Car &theCar);
 
 int main()
 {
-	for (int i = 0; i < LotSpase; i++)
+	for (int i = 0; i < LotSpace; i++)
 	{
-		setcarData(Lot);
-		displaycarData(car);
+		setcarData(Lot[i]);
+		displaycarData(Lot[i]);
 	}
+	return 0;
 }
 //~~DEBUGSTOP~~
-//TODO: Make and array to store 10 cars 
-//gets the make and model
+//Get user input to set car data.
 void setcarData(Car &theCar)
 {
-	cout << "plese input a Make of the car.\n";
+	cout << "\nPlease input a make of the car.\n";
 	getline(cin, theCar.Make);
-	cout << "plese input a Model of the car.\n";
+	cout << "Please input a model of the car.\n";
 	getline(cin, theCar.Model);
-	cout << "plese input a Year of the car.\n";
+	cout << "Please input a year of the car.\n";
 	cin >> theCar.Year;
-	cout << "is your car a new car.\n Yes=1:\n No=0\n";
+	cout << "Is your car a new car?\n Yes=1:\n No=0\n";
 	cin >> theCar.newcar;
-	cout << "plese input a estmaed Price of the car.\n";
+	cout << "Please input the estimated price of the car.\n";
 	cin >> theCar.Price;
 }
-//Displays the in put info
+//Displays the input info
 void displaycarData(Car &theCar)
 {
 	cout << "Make:" << theCar.Make << endl;
@@ -49,10 +51,10 @@ void displaycarData(Car &theCar)
 	cout << "Price:" << theCar.Price << endl;
 	if (theCar.newcar = 1)
 	{
-		cout << "the car is new";
+		cout << "The car is new.";
 	}
 	else if (theCar.newcar = 0)
 	{
-		cout << "the car is not new";
+		cout << "The car is not new.";
 	}
 }
