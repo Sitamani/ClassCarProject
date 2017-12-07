@@ -17,13 +17,31 @@ Car Lot[LotSpace];
 //FUNCTIONS
 void setcarData(Car &theCar);
 void displaycarData(Car &theCar);
-
+//goes back to main menu after adding 10 cars
 int main()
 {
-	for (int i = 0; i < LotSpace; i++)
+	bool menu = true;
+	cout << "How can we help you today?" << endl;
+	while (menu)
+	{
+	 int usrInput; 
+	 cout << "\nENTER: \n0 = Add cars\n1 = Exit\n" << endl;
+	 cin >> usrInput;
+
+     switch (usrInput) {
+        case 0:
+			for (int i = 0; i < LotSpace; i++)
 	{
 		setcarData(Lot[i]);
 		displaycarData(Lot[i]);
+	}
+            break;
+        case 1: 
+			menu = false;
+			break;
+        default:
+            break;
+	 }
 	}
 	return 0;
 }
@@ -32,15 +50,16 @@ int main()
 void setcarData(Car &theCar)
 {
 	cout << "\nPlease input a make of the car.\n";
-	getline(cin, theCar.Make);
+	cin >> theCar.Make;
 	cout << "Please input a model of the car.\n";
-	getline(cin, theCar.Model);
+	cin >> theCar.Model;
 	cout << "Please input a year of the car.\n";
 	cin >> theCar.Year;
 	cout << "Is your car a new car?\n Yes=1:\n No=0\n";
 	cin >> theCar.newcar;
 	cout << "Please input the estimated price of the car.\n";
 	cin >> theCar.Price;
+	cin.ignore(numeric_limits<streamsize>::max(),'\n');
 }
 //Displays the input info
 void displaycarData(Car &theCar)
