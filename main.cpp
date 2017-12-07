@@ -11,8 +11,8 @@ struct Car
 };
 
 //Array to store 10 cars.
-const int LotSpace = 10;
-Car Lot[LotSpace];
+const int LOTSPACE = 10;
+Car Lot[LOTSPACE];
 
 //FUNCTIONS
 void setcarData(Car &theCar);
@@ -30,10 +30,13 @@ int main()
 
      switch (usrInput) {
         case 0:
-			for (int i = 0; i < LotSpace; i++)
+			for (int i = 0; i < LOTSPACE; i++)
 	{
 		setcarData(Lot[i]);
-		displaycarData(Lot[i]);
+	}
+			for (int j = 0; j < LOTSPACE; j++)
+	{
+		displaycarData(Lot[j]);
 	}
             break;
         case 1: 
@@ -59,7 +62,6 @@ void setcarData(Car &theCar)
 	cin >> theCar.newcar;
 	cout << "Please input the estimated price of the car.\n";
 	cin >> theCar.Price;
-	cin.ignore(numeric_limits<streamsize>::max(),'\n');
 }
 //Displays the input info
 void displaycarData(Car &theCar)
